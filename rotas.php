@@ -3,7 +3,6 @@ use App\Controller\{
     CurriculoController,
     DashboardController,
     EmpresaController,
-    FuncionarioController,
     LoginController,
     VagaEmpregoController,
 };
