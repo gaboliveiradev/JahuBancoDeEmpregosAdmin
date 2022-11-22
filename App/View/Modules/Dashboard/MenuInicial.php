@@ -12,6 +12,6 @@
         <?php include "./View/Includes/header.php" ?>
     </header>
 
-    <?php include "./View/Includes/Bootstrap/js_config.php" ?>
+    <?php include './View/Includes/Bootstrap/js_config.php' ?>
 </body>
 </html>
