@@ -20,11 +20,19 @@
                         <hr class="dropdown-divider">
                     </li>
                     <li>
-                        <a class="dropdown-item" href="/curriculos/listar">Logout</a>
+                        <a class="dropdown-item" href="/pessoas/listar">Pessoas</a>
+                    </li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="/vagas/listar">Vagas</a>
                     </li>
                 </ul>
             </div>
+            <a href="/estatisticas" class="nav-link text-start">Estatísticas</a>
         </div>
+        
         <!-- Dropdown do User -->
         <div class="navbar-brand dropdown text-end p-2 ">
             <h6 href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">

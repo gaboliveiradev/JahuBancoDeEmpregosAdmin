@@ -2,10 +2,10 @@
 
 namespace App\Controller;
 
-class VagaEmpregoController extends Controller {
+class VagaController extends Controller {
 
     public static function index() {
         parent::isAuthenticated();
-        parent::render("VagaEmprego/ListaVagaEmprego");
+        parent::render("Vaga/ListaVaga");
     }
 }
