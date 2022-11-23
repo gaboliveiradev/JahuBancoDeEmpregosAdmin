@@ -1,61 +1,71 @@
 <?php
+
 use App\Controller\{
     CurriculoController,
     DashboardController,
     EmpresaController,
     LoginController,
     VagaEmpregoController,
-    PessoaFisicaController
+    PessoaFisicaController,
+    VagaController
 };
 
 $parse_uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
-switch($parse_uri) {
+switch ($parse_uri) {
 
-    // Rotas Login
+        // Rotas Login
     case "/login":
         LoginController::index();
-    break;
+        break;
 
     case "/logout":
         LoginController::logout();
-    break;
+        break;
 
     case "/login/auth":
         LoginController::auth();
-    break;
+        break;
 
-    // Rotas Dashboard
+        // Rotas Dashboard
 
     case "/dashboard":
         DashboardController::index();
-    break;
+        break;
 
     case "/pessoas/listar":
         PessoaFisicaController::index();
-    break;
+        break;
 
     case "/pessoas/busca":
         PessoaFisicaController::buscar();
-    break;
+        break;
+
+    case "/vagas/listar":
+        VagaController::index();
+        break;
+
+    case "/vagas/busca":
+        VagaController::buscar();
+        break;
 
     case "/curriculo":
         CurriculoController::index();
-    break;
+        break;
 
     case "/empresas/listar":
         EmpresaController::index();
-    break;
+        break;
 
     case "/empresas/busca":
         EmpresaController::buscar();
-    break;
+        break;
 
     case "/vaga-de-emprego":
         //VagaController::index();
-    break;
+        break;
 
     default:
         header("Location: /login");
-    break;
+        break;
 }

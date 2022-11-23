@@ -1,35 +1,54 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php include "./View/Includes/Bootstrap/css_config.php" ?>
-    <title>Lista de Vaga de Empregos - Painel Admin</title>
+    <title>Listas de Vagas - Painel Admin</title>
 </head>
+
 <body>
     <header>
         <?php include "./View/Includes/header.php" ?>
     </header>
-    <h1>Lista de Vaga de Empregos</h1>
-    <section class="container">
-    <table class="table">
-        <thead>
-            <tr>
-                <th></th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <?php foreach ($item as $model->rows) : ?>
-                    <td></td>
+    <main class="container "><br>
+        <section class="btn-group">
+            <div class="input-group mb-3">
+                <form action="/vagas/busca" method="get" class="form d-flex ">
+                    <input type="text" name="query" class="form-control " placeholder="Pesquisar Vaga" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                    <button class="btn btn-outline-secondary" type="submit">OK</button>
+                </form>
+
+            </div>
+        </section>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Titulo</th>
+                    <th>Descricao</th>
+                    <th>Salario</th>
+                    <th>Setor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($model as $item) : ?>
+                    <tr>
+                        <td><?= $item->id_vaga ?></td>
+                        <td><?= $item->titulo ?></td>
+                        <td><?= $item->descricao ?></td>
+                        <td><?= $item->salario ?></td>
+                        <td><?= $item->setor ?></td>
+                    </tr>
                 <?php endforeach ?>
-            </tr>
-        </tbody>
-    </table>
-    </section>
+            </tbody>
+        </table>
+    </main>
+
 
     <?php include "./View/Includes/Bootstrap/js_config.php" ?>
 </body>
+
 </html>

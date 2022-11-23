@@ -17,7 +17,7 @@
         <section class="btn-group">
             <div class="input-group mb-3">
                 <form action="/pessoas/busca" method="get" class="form d-flex ">
-                    <input type="text" name="query" class="form-control " placeholder="Pesquisar Empresa " aria-label="Recipient's username" aria-describedby="basic-addon2">
+                    <input type="text" name="query" class="form-control " placeholder="Pesquisar Pessoa" aria-label="Recipient's username" aria-describedby="basic-addon2">
                     <button class="btn btn-outline-secondary" type="submit">OK</button>
                 </form>
 

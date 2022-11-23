@@ -30,7 +30,7 @@
                     </li>
                 </ul>
             </div>
-            <a href="/estatisticas" class="nav-link text-start">Estatísticas</a>
+            <a href="/dashboard" class="nav-link text-start">Estatísticas</a>
         </div>
         
         <!-- Dropdown do User -->
