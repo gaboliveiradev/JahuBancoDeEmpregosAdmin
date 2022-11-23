@@ -7,33 +7,6 @@
     <?php include "./View/Includes/Bootstrap/css_config.php" ?>
     <?php include "./View/Includes/Graficos/PessoaSexo.php" ?>
     <title>Dashboard - Logado como <?= $_SESSION['admin_logged']->nome ?></title>
-
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load('current', {'packages':['bar']});
-      google.charts.setOnLoadCallback(drawChart);
-
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Bairro', 'Quantidade'],
-          ['Jardim Juliana', 1],
-          ['Jardim Dona Emília', 2],
-          ['Jardim Carolina', 1],
-          ['Jardim Paulista', 4]
-        ]);
-
-        var options = {
-          chart: {
-            title: 'Currículos por Bairro',
-            subtitle: '',
-          }
-        };
-
-        var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
-
-        chart.draw(data, google.charts.Bar.convertOptions(options));
-      }
-    </script>
 </head>
 <body>
     <header>
