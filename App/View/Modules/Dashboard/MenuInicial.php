@@ -5,10 +5,15 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
   <?php include "./View/Includes/Bootstrap/css_config.php" ?>
   <?php include "./View/Includes/Graficos/PessoaSexo.php" ?>
   <?php include "./View/Includes/Graficos/CurriculosBairro.php" ?>
   <?php include "./View/Includes/Graficos/FaixaSalarial.php" ?>
+  <?php include "./View/Includes/Graficos/MediaIdadeBairro.php" ?>
+  <?php include "./View/Includes/Graficos/MediaIdadeSexo.php" ?>
+  <?php include "./View/Includes/Graficos/VagasBairro.php" ?>
   <title>Dashboard - Logado como <?= $_SESSION['admin_logged']->nome ?></title>
 
   <style>
@@ -80,6 +85,30 @@
         </div>
         <div class="card-body">
           <div id="vagas_bairro_chart_div" style="width: 1000px; height: 300px;"></div>
+        </div>
+        <div class="card-footer text-muted">
+          Ultima atualização, há dois dias.
+        </div>
+      </div>
+
+      <div class="card text-center m-3">
+        <div class="card-header">
+          <b>Currículo:</b> Média de Idade Por Bairro
+        </div>
+        <div class="card-body">
+          <div id="media_idade_bairro_chart_div" style="width: 1000px; height: 300px;"></div>
+        </div>
+        <div class="card-footer text-muted">
+          Ultima atualização, há dois dias.
+        </div>
+      </div>
+
+      <div class="card text-center m-3">
+        <div class="card-header">
+          <b>Currículo:</b> Média de Idade Por Sexo
+        </div>
+        <div class="card-body">
+          <div id="media_idade_sexo_chart_div" style="width: 1000px; height: 300px;"></div>
         </div>
         <div class="card-footer text-muted">
           Ultima atualização, há dois dias.

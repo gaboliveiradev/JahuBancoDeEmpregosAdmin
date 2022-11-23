@@ -5,12 +5,12 @@
 
   function drawChart() {
     var data = google.visualization.arrayToDataTable([
-      ['Nome dos Bairros', 'Quantidade de Currículos',],
-      ['Jardim Juliana', 3],
-      ['Jardim Dona Emília', 7],
+      ['Nome dos Bairros', 'Vagas Ofertadas',],
+      ['Distrito Industrial', 18],
+      ['Centro', 15],
       ['Jardim Carolina', 9],
       ['Jardim América', 2],
-      ['Cila Bauab', 6]
+      ['Jardim Parati', 1]
     ]);
 
     var options = {
@@ -22,7 +22,7 @@
       }
     };
 
-    var chart = new google.charts.Bar(document.getElementById('curriculos_bairro_chart_div'));
+    var chart = new google.charts.Bar(document.getElementById('vaga_bairro_chart_div'));
     chart.draw(data, google.charts.Bar.convertOptions(options));
   }
 </script>

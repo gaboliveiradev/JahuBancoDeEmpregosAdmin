@@ -5,12 +5,9 @@
 
   function drawChart() {
     var data = google.visualization.arrayToDataTable([
-      ['Nome dos Bairros', 'Quantidade de Currículos',],
-      ['Jardim Juliana', 3],
-      ['Jardim Dona Emília', 7],
-      ['Jardim Carolina', 9],
-      ['Jardim América', 2],
-      ['Cila Bauab', 6]
+      ['Sexo', 'Media',],
+      ['Masculino', 55.2],
+      ['Fermino', 22.5],
     ]);
 
     var options = {
@@ -22,7 +19,7 @@
       }
     };
 
-    var chart = new google.charts.Bar(document.getElementById('curriculos_bairro_chart_div'));
+    var chart = new google.charts.Bar(document.getElementById('media_idade_sexo_chart_div'));
     chart.draw(data, google.charts.Bar.convertOptions(options));
   }
 </script>
