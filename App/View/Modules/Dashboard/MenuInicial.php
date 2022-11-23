@@ -17,9 +17,9 @@
             var data = new google.visualization.DataTable();
             data.addColumn('string', 'Topping');
             data.addColumn('number', 'Slices');
-            data.addRows([
+            data.addRows([              
               ['Feminino', <?= 10 ?>],
-              ['Masculino', <?= 20 ?>]
+              ['Masculino', <?= 20 ?>],            
             ]);
           
             var options = {'title':'Pessoas x Sexo', 'width':400, 'height':300};
