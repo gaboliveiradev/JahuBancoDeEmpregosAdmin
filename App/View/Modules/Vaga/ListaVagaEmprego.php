@@ -28,6 +28,7 @@
                 <tr>
                     <th>Id</th>
                     <th>Titulo</th>
+                    <th>Empresa</th>
                     <th>Descricao</th>
                     <th>Salario</th>
                     <th>Setor</th>
@@ -38,9 +39,10 @@
                     <tr>
                         <td><?= $item->id_vaga ?></td>
                         <td><?= $item->titulo ?></td>
+                        <td><?= $item->nome_fantasia ?></td>
                         <td><?= $item->descricao ?></td>
-                        <td>R$ <?= $item->salario ?></td>
-                        <td><?= $item->setor ?></td>
+                        <td>R$ <?= number_format($item->salario, 2, ",", ".")  ?></td>
+                        <td><?= $item->setor ?></td>,
                     </tr>
                 <?php endforeach ?>
             </tbody>

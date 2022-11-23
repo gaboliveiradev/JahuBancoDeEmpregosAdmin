@@ -14,7 +14,13 @@ class VagaDAO extends DAO {
     } 
 
     public function getAllRows(){
-        $sql = "SELECT * FROM vaga;";
+        
+        
+        $sql = "SELECT v.*, pj.* 
+                FROM vaga v 
+                JOIN pessoa_juridica pj ON (pj.id_pessoa = v.id_pessoa) ";
+        
+        
         $stmt = $this->conexao->prepare($sql);
         $stmt->execute();
 
@@ -24,8 +30,13 @@ class VagaDAO extends DAO {
     public function getbyTitulo($query)
     {
         $dados = "%" . $query . "%";
-        $sql = "SELECT  * FROM vaga
+        $sql = "SELECT * 
+                FROM vaga v
+                JOIN pessoa_juridica pj ON (pj.id_pessoa = v.id_pessoa)
+                
                 WHERE titulo LIKE ?;";
+        
+        
         $stmt = $this->conexao->prepare($sql);
         $stmt->bindValue(1, $dados);        
         $stmt->execute();

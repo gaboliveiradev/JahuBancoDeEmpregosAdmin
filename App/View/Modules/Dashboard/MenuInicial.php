@@ -29,7 +29,7 @@
 
   <center>
     <section class="box">
-      <div class="container text-center">
+      <div class="container text-center m-3">
         <div class="row">
           <div class="col">
             <div class="card text-center">
@@ -46,7 +46,7 @@
           </div>
 
           <div class="col">
-            <div class="card text-center">
+            <div class="card text-center m-3">
               <div class="card-header">
                 <b>Currículo:</b> Pessoas por Sexo
               </div>
@@ -61,7 +61,7 @@
         </div>
       </div>
 
-      <div class="card text-center">
+      <div class="card text-center m-3">
         <div class="card-header">
           <b>Currículo:</b> Currículos por Bairros
         </div>
@@ -72,6 +72,20 @@
           Ultima atualização, há dois dias.
         </div>
       </div>
+
+
+      <div class="card text-center m-3">
+        <div class="card-header">
+          <b>Vagas:</b> Vagas por Bairros
+        </div>
+        <div class="card-body">
+          <div id="vagas_bairro_chart_div" style="width: 1000px; height: 300px;"></div>
+        </div>
+        <div class="card-footer text-muted">
+          Ultima atualização, há dois dias.
+        </div>
+      </div>
+
     </section>
   </center>
 

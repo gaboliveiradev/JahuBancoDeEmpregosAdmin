@@ -4,7 +4,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <a class="navbar-brand" href="/dashboard">
-            <h5>Banco de Empregos</h5>
+            <h5>Banco de Empregos <small>Admin</small></h5>
             <!--<img src="./../../View/img/logo.png" alt="mdo" width="52" height="52" class="d-inline-block align-text-top">-->
         </a>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -20,7 +20,7 @@
                         <hr class="dropdown-divider">
                     </li>
                     <li>
-                        <a class="dropdown-item" href="/pessoas/listar">Pessoas</a>
+                        <a class="dropdown-item" href="/pessoas/listar">Currículos</a>
                     </li>
                     <li>
                         <hr class="dropdown-divider">

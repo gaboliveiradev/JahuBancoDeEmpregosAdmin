@@ -9,10 +9,13 @@
       ['Jardim Juliana', 3],
       ['Jardim Dona Emília', 7],
       ['Jardim Carolina', 9],
-      ['Jardim Paulista', 4]
+      ['Jardim América', 2],
+      ['Cila Bauab', 6]
     ]);
 
     var options = {
+      legend: { position: 'none' },
+      isStacked: 'percent',
       chart: {
         title: '',
         subtitle: '',
