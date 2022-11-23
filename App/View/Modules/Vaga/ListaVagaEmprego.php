@@ -39,7 +39,7 @@
                         <td><?= $item->id_vaga ?></td>
                         <td><?= $item->titulo ?></td>
                         <td><?= $item->descricao ?></td>
-                        <td><?= $item->salario ?></td>
+                        <td>R$ <?= $item->salario ?></td>
                         <td><?= $item->setor ?></td>
                     </tr>
                 <?php endforeach ?>
