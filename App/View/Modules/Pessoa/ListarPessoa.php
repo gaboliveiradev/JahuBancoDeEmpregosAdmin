@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php include "./View/Includes/Bootstrap/css_config.php" ?>
-    <title>Listas de Empresas - Painel Admin</title>
+    <title>Listas de Pessoas - Painel Admin</title>
 </head>
 
 <body>
@@ -16,9 +16,9 @@
     <main class="container "><br>
         <section class="btn-group">
             <div class="input-group mb-3">
-                <form action="/empresas/busca" method="get" class="form d-flex ">
+                <form action="/pessoas/busca" method="get" class="form d-flex ">
                     <input type="text" name="query" class="form-control " placeholder="Pesquisar Empresa " aria-label="Recipient's username" aria-describedby="basic-addon2">
-                    <button class="btn btn-outline-secondary" type="submit">OK</button>                    
+                    <button class="btn btn-outline-secondary" type="submit">OK</button>
                 </form>
 
             </div>
@@ -27,20 +27,22 @@
             <thead>
                 <tr>
                     <th>Id</th>
-                    <th>Razão Social</th>
-                    <th>Nome Fantasia</th>
-                    <th>CNPJ</th>
+                    <th>Nome</th>
+                    <th>Instituicao</th>
+                    <th>Curso</th>
+                    <th>Conteudo</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <?php foreach($model as $item) : ?>
-                        <td><?= $item->id_pessoa_juridica ?></td>
-                        <td><?= $item->razao_social ?></td>
-                        <td><?= $item->nome_fantasia ?></td>
-                        <td><?= $item->CNPJ ?></td>
-                    <?php endforeach ?>
-                </tr>
+                <?php foreach ($model as $item) : ?>
+                    <tr>
+                        <td><?= $item->id ?></td>
+                        <td><?= $item->nome ?></td>
+                        <td><?= $item->instituicao ?></td>
+                        <td><?= $item->curso ?></td>
+                        <td><?= $item->conteudo_curso ?></td>
+                    </tr>
+                <?php endforeach ?>
             </tbody>
         </table>
     </main>

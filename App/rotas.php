@@ -5,6 +5,7 @@ use App\Controller\{
     EmpresaController,
     LoginController,
     VagaEmpregoController,
+    PessoaFisicaController
 };
 
 $parse_uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
@@ -30,16 +31,28 @@ switch($parse_uri) {
         DashboardController::index();
     break;
 
+    case "/pessoas/listar":
+        PessoaFisicaController::index();
+    break;
+
+    case "/pessoas/busca":
+        PessoaFisicaController::buscar();
+    break;
+
     case "/curriculo":
         CurriculoController::index();
     break;
 
-    case "/empresa":
+    case "/empresas/listar":
         EmpresaController::index();
     break;
 
+    case "/empresas/busca":
+        EmpresaController::buscar();
+    break;
+
     case "/vaga-de-emprego":
-        VagaEmpregoController::index();
+        //VagaController::index();
     break;
 
     default:
