@@ -34,20 +34,6 @@
           <div class="col">
             <div class="card text-center">
               <div class="card-header">
-                <b>Currículo:</b> Pessoas por Sexo
-              </div>
-              <div class="card-body">
-                <div id="pessoa_sexo_chart_div"></div>
-              </div>
-              <div class="card-footer text-muted">
-                Ultima atualização, há 20 min.
-              </div>
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="card text-center">
-              <div class="card-header">
                 <b>Empresa:</b> Faixa Salarial por Setor
               </div>
               <div class="card-body">
@@ -55,6 +41,20 @@
               </div>
               <div class="card-footer text-muted">
                 Ultima atualização, há 1 hora.
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card text-center">
+              <div class="card-header">
+                <b>Currículo:</b> Pessoas por Sexo
+              </div>
+              <div class="card-body">
+                <div id="pessoa_sexo_chart_div"></div>
+              </div>
+              <div class="card-footer text-muted">
+                Ultima atualização, há 20 min.
               </div>
             </div>
           </div>
