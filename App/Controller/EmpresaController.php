@@ -14,7 +14,7 @@ class EmpresaController extends Controller {
             $model = $model->getAll();
         }
         
-        include 'View/Modules/Empresa/ListaEmpresas.php';
+        include VIEWS . 'Empresa/ListaEmpresas.php';
     }
 
     public static function buscar(){

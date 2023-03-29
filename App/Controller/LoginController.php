@@ -8,7 +8,7 @@ class LoginController extends Controller {
 
     public static function index() {
         $email = (isset($_COOKIE["admin_login"]) ? $_COOKIE["admin_login"] : "");
-        include "./View/Modules/Login/FormLogin.php";
+        include VIEWS . "Login/FormLogin.php";
     }
 
     public static function auth() {

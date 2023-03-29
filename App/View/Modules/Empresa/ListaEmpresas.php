@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <?php include "./View/Includes/Bootstrap/css_config.php" ?>
+    <?php include  VIEWS . "/../Includes/Bootstrap/css_config.php" ?>
     <title>Listas de Empresas - Painel Admin</title>
 </head>
 
 <body>
     <header>
-        <?php include "./View/Includes/header.php" ?>
+        <?php include  VIEWS . "/../Includes/header.php" ?>
     </header>
     <main class="container "><br>
         <section class="btn-group">
@@ -33,20 +33,20 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <?php foreach($model as $item) : ?>
-                        <td><?= $item->id_pessoa_juridica ?></td>
-                        <td><?= $item->razao_social ?></td>
-                        <td><?= $item->nome_fantasia ?></td>
-                        <td><?= $item->CNPJ ?></td>
-                    <?php endforeach ?>
+                <?php foreach($model as $item) : ?>
+                <tr>                    
+                    <td><?= $item->id_pessoa_juridica ?></td>
+                    <td><?= $item->razao_social ?></td>
+                    <td><?= $item->nome_fantasia ?></td>
+                    <td><?= $item->CNPJ ?></td>                    
                 </tr>
+                <?php endforeach ?>
             </tbody>
         </table>
     </main>
 
 
-    <?php include "./View/Includes/Bootstrap/js_config.php" ?>
+    <?php include  VIEWS . "/../Includes/Bootstrap/js_config.php" ?>
 </body>
 
 </html>
