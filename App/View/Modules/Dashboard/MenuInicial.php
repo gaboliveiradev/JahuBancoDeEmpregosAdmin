@@ -31,7 +31,6 @@
   <header>
     <?php include  VIEWS . "/../Includes/header.php" ?>
   </header>
-
   <center>
     <section class="box">
       <div class="container text-center m-3">

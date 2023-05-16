@@ -72,7 +72,7 @@ class PessoaFisicaDAO extends PessoaDAO
 
     public function curriculosPorBairro()
     {
-        $sql = "SELECT e.bairro, COUNT(pf.id_pessoa_fisica) AS curriculos_por_bairro
+        $sql = "SELECT e.bairro, COUNT(pf.id_pessoa_fisica) AS quantidade
         FROM pessoa_fisica pf
         JOIN endereco e ON (e.id_pessoa = pf.id_pessoa)
         GROUP BY e.bairro";

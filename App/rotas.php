@@ -65,6 +65,21 @@ switch ($parse_uri) {
         //VagaController::index();
         break;
 
+        // Query's
+
+    case '/curriculo/by-bairro':
+        PessoaFisicaController::curriculosByBairro();
+        break;
+
+    case '/idade/by-sexo':
+        PessoaFisicaController::idadeBySexo();
+        break;
+
+    case '/idade/by-bairro':
+        PessoaFisicaController::idadeByBairro();
+        break;
+
+
     default:
         header("Location: /login");
         break;

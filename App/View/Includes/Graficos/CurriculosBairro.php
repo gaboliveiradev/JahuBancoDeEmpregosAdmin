@@ -1,28 +1,38 @@
-
 <script type="text/javascript">
-  google.charts.load('current', {'packages':['bar']});
+  google.charts.load('current', {
+    'packages': ['bar']
+  });
   google.charts.setOnLoadCallback(drawChart);
 
   function drawChart() {
-    var data = google.visualization.arrayToDataTable([
-      ['Nome dos Bairros', 'Quantidade de Currículos',],
-      ['Jardim Juliana', 3],
-      ['Jardim Dona Emília', 7],
-      ['Jardim Carolina', 9],
-      ['Jardim América', 2],
-      ['Cila Bauab', 6]
-    ]);
+    $.ajax({
+      url: "/curriculo/by-bairro",
+      dataType: "JSON",
+      success: function(jsonData) {
+        var dataArray = [
+          ['Bairro', 'Quantidade'],
+        ];
 
-    var options = {
-      legend: { position: 'none' },
-      isStacked: 'percent',
-      chart: {
-        title: '',
-        subtitle: '',
+        for (var i = 0; i < jsonData.length; i++) {
+          var row = [jsonData[i].bairro, jsonData[i].quantidade];
+          dataArray.push(row);
+          console.log(jsonData[i].bairro)
+        }
+
+        var options = {
+          title: "",       
+          legend: {
+            position: "none"
+          },
+        };
+
+        var data = google.visualization.arrayToDataTable(dataArray);
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('curriculos_bairro_chart_div'));
+        
+        chart.draw(data, options);
+        
       }
-    };
-
-    var chart = new google.charts.Bar(document.getElementById('curriculos_bairro_chart_div'));
-    chart.draw(data, google.charts.Bar.convertOptions(options));
+    });
   }
 </script>
