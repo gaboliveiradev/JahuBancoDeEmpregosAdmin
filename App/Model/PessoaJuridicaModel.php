@@ -7,6 +7,7 @@ use App\DAO\PessoaJuridicaDAO;
 class PessoaJuridicaModel extends PessoaModel
 {
     public $id_pessoa_juridica, $nome_fantasia, $razao_social, $cnpj;
+    
 
     public function getAll(){
         $dao = new PessoaJuridicaDAO();
@@ -18,5 +19,17 @@ class PessoaJuridicaModel extends PessoaModel
         $dao = new PessoaJuridicaDAO();
 
         return $dao->getbyRazao($query);
+    }
+
+    public function empresasPorBairro(){
+        $dao = new PessoaJuridicaDAO();
+
+        return $dao->empresasPorBairro();
+    }
+
+    public function vagasPorBairro(){
+        $dao = new PessoaJuridicaDAO();
+
+        return $dao->vagasPorBairro();
     }
 }

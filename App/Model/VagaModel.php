@@ -21,4 +21,16 @@ class VagaModel extends Model
 
         return $dao->getbyTitulo($query);
     }
+
+    public function vagasPorSetor(){
+        $dao = new VagaDAO();
+
+        return $dao->vagasPorSetor();
+    }
+
+    public function salarioPorSetor(){
+        $dao = new VagaDAO();
+
+        return $dao->salarioPorSetor();
+    }
 }
