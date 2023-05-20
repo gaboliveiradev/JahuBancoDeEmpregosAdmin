@@ -2,6 +2,7 @@
 
 namespace App\Model;
 
+use App\DAO\PessoaFisicaDAO;
 use App\DAO\PessoaJuridicaDAO;
 
 class PessoaJuridicaModel extends PessoaModel
@@ -31,5 +32,11 @@ class PessoaJuridicaModel extends PessoaModel
         $dao = new PessoaJuridicaDAO();
 
         return $dao->vagasPorBairro();
+    }
+
+    public function getByIdJoinPessoa(int $id) 
+    {
+        $dao = new PessoaJuridicaDAO();
+        return $dao->getByIdJoinPessoa((int) $id);
     }
 }

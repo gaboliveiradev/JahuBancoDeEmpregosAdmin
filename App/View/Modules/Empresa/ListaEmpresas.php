@@ -36,7 +36,7 @@
                 <?php foreach($model as $item) : ?>
                 <tr>                    
                     <td><?= $item->id_pessoa_juridica ?></td>
-                    <td><?= $item->razao_social ?></td>
+                    <td><a idPj="<?= $item->id_pessoa_juridica ?>" data-bs-toggle="modal" data-bs-target="#exampleModal" id="nome_empresa"><?= $item->razao_social ?></a></td>
                     <td><?= $item->nome_fantasia ?></td>
                     <td><?= $item->CNPJ ?></td>                    
                 </tr>
@@ -45,8 +45,26 @@
         </table>
     </main>
 
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Dados Completo | </h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p id="email"></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <?php include  VIEWS . "/../Includes/Bootstrap/js_config.php" ?>
+    <script src="./../../../View/js/jquery.empresa.js"></script>
 </body>
 
 </html>

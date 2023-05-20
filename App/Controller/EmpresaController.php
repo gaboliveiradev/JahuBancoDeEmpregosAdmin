@@ -17,6 +17,12 @@ class EmpresaController extends Controller {
         include VIEWS . 'Empresa/ListaEmpresas.php';
     }
 
+    public static function getById() 
+    {
+        $model = new PessoaJuridicaModel();
+        parent::setResponseAsJSON($model->getByIdJoinPessoa((int) $_GET['id']));
+    }
+
     public static function buscar(){
         parent::isAuthenticated();
         $model = new PessoaJuridicaModel();

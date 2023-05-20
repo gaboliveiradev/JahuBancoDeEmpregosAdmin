@@ -63,21 +63,25 @@ switch ($parse_uri) {
 
     case "/vaga-de-emprego":
         //VagaController::index();
-        break;
+    break;
 
-        // Query's
+    // Query's
 
     case '/curriculo/by-bairro':
         PessoaFisicaController::curriculosByBairro();
-        break;
+    break;
 
     case '/idade/by-sexo':
         PessoaFisicaController::idadeBySexo();
-        break;
+    break;
 
     case '/idade/by-bairro':
         PessoaFisicaController::idadeByBairro();
-        break;
+    break;
+
+    case "/get/empresa":
+        EmpresaController::getById();
+    break;
 
 
     default:

@@ -18,8 +18,6 @@ abstract class Controller {
 
     protected static function setResponseAsJSON($data, $request_status = true)
     {
-       
-
         header("Access-Control-Allow-Origin: *");  
         header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
         header('Access-Control-Allow-Headers: Origin, Content-Type, Accept');      
