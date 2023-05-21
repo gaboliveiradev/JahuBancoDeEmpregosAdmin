@@ -54,7 +54,22 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <p id="email"></p>
+            <p>
+                <b id="titleEmail"></b>
+                <span id="email"></span>
+            </p>
+            <p>
+                <b id="titleCNPJ"></b>
+                <span id="cnpj"></span>
+            </p>
+            <p>
+                <b id="titleNomeFantasia"></b>
+                <span id="nomeFantasia"></span>
+            </p>
+            <p>
+                <b id="titleRazaoSocial"></b>
+                <span id="razaoSocial"></span>
+            </p>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
