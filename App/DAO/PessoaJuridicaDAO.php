@@ -62,9 +62,11 @@ class PessoaJuridicaDAO extends PessoaDAO
 
     public function getByIdJoinPessoa(int $id) 
     {
-        $sql = "SELECT pj.nome_fantasia, pj.razao_social, pj.cnpj, p.email
+        $sql = "SELECT pj.nome_fantasia, pj.razao_social, pj.cnpj, p.email, e.logradouro, e.numero, e.cep, e.bairro, c.nome, c.uf, c.codigo_ibge, c.ddd
         FROM pessoa_juridica pj 
-        JOIN pessoa p ON (p.id_pessoa = pj.id_pessoa) WHERE pj.id_pessoa_juridica = ?;";
+        JOIN pessoa p ON (p.id_pessoa = pj.id_pessoa)
+        JOIN endereco e ON (e.id_pessoa = p.id_pessoa)
+        JOIN cidade c ON (c.id_cidade = e.id_cidade) WHERE pj.id_pessoa_juridica = ?;";
 
         $stmt = $this->conexao->prepare($sql);
         $stmt->bindValue(1, $id);
