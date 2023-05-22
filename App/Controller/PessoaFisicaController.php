@@ -43,7 +43,12 @@ class PessoaFisicaController extends Controller {
         $model = new PessoaFisicaModel();
         $query = $model->idadePorBairro();
         parent::setResponseAsJSON($query);
+    }
 
+    public static function getById() 
+    {
+        $model = new PessoaFisicaModel();
+        parent::setResponseAsJSON($model->getByIdPessoaFisicaJoinPessoaQualificacaoEnderecoCidade( (int) $_GET['id']));
     }
 
 }

@@ -49,4 +49,10 @@ class PessoaFisicaModel extends PessoaModel
 
         return $dao->idadePorSexo();
     }
+
+    public function getByIdPessoaFisicaJoinPessoaQualificacaoEnderecoCidade(int $id)
+    {
+        $dao = new PessoaFisicaDAO();
+        return $dao->getByIdPessoaFisicaJoinPessoaQualificacaoEnderecoCidade( (int) $id );
+    }
 }

@@ -60,7 +60,7 @@ class PessoaJuridicaDAO extends PessoaDAO
         return $stmt->fetchAll(PDO::FETCH_CLASS);
     }
 
-    public function getByIdJoinPessoaEnderecoCidade(int $id) 
+    public function getByIdJoinPessoaJuridicaEnderecoCidade(int $id) 
     {
         $sql = "SELECT pj.nome_fantasia, pj.razao_social, pj.cnpj, p.email, e.logradouro, e.numero, e.cep, e.bairro, c.nome, c.uf, c.codigo_ibge, c.ddd
         FROM pessoa_juridica pj 

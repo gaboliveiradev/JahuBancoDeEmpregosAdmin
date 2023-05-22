@@ -34,9 +34,9 @@ class PessoaJuridicaModel extends PessoaModel
         return $dao->vagasPorBairro();
     }
 
-    public function getByIdJoinPessoaEnderecoCidade(int $id) 
+    public function getByIdJoinPessoaJuridicaEnderecoCidade(int $id) 
     {
         $dao = new PessoaJuridicaDAO();
-        return $dao->getByIdJoinPessoaEnderecoCidade((int) $id);
+        return $dao->getByIdJoinPessoaJuridicaEnderecoCidade((int) $id);
     }
 }

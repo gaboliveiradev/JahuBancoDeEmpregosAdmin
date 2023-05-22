@@ -3,9 +3,8 @@
 use App\Controller\{
     CurriculoController,
     DashboardController,
-    EmpresaController,
+    PessoaJuridicaController,
     LoginController,
-    VagaEmpregoController,
     PessoaFisicaController,
     VagaController
 };
@@ -54,11 +53,11 @@ switch ($parse_uri) {
         break;
 
     case "/empresas/listar":
-        EmpresaController::index();
+        PessoaJuridicaController::index();
         break;
 
     case "/empresas/busca":
-        EmpresaController::buscar();
+        PessoaJuridicaController::buscar();
         break;
 
     case "/vaga-de-emprego":
@@ -80,7 +79,11 @@ switch ($parse_uri) {
     break;
 
     case "/get/empresa":
-        EmpresaController::getById();
+        PessoaJuridicaController::getById();
+    break;
+
+    case "/get/curriculo":
+        PessoaFisicaController::getById();
     break;
 
 
