@@ -7,6 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php include  VIEWS . "/../Includes/Bootstrap/css_config.php" ?>
     <title>Listas de Pessoas - Painel Admin</title>
+
+    <style>
+        .click {
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
@@ -37,7 +43,7 @@
                 <?php foreach ($model as $item) : ?>
                     <tr>
                         <td><?= $item->id ?></td>
-                        <td><?= $item->nome ?></td>
+                        <td><a class="click nome_pf" id="<?= $item->id ?>" data-bs-toggle="modal" data-bs-target="#exampleModal"><?= $item->nome ?></a></td>
                         <td><?= $item->instituicao ?></td>
                         <td><?= $item->curso ?></td>
                         <td><?= $item->conteudo_curso ?></td>
@@ -49,6 +55,7 @@
 
 
     <?php include  VIEWS . "/../Includes/Bootstrap/js_config.php" ?>
+    <script src="./../../../View/js/jquery.curriculo.js"></script>
 </body>
 
 </html>
