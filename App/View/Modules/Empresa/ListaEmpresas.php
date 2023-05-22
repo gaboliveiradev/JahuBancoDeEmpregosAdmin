@@ -44,7 +44,7 @@
                 <?php foreach($model as $item) : ?>
                 <tr>                    
                     <td><?= $item->id_pessoa_juridica ?></td>
-                    <td><a class="click" idPj="<?= $item->id_pessoa_juridica ?>" data-bs-toggle="modal" data-bs-target="#exampleModal" id="nome_empresa"><?= $item->razao_social ?></a></td>
+                    <td><a class="click nome_empresa" data-bs-toggle="modal" data-bs-target="#exampleModal" id="<?= $item->id_pessoa_juridica ?>"><?= $item->razao_social ?></a></td>
                     <td><?= $item->nome_fantasia ?></td>
                     <td><?= $item->CNPJ ?></td>                    
                 </tr>

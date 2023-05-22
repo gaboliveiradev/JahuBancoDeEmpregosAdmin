@@ -1,7 +1,8 @@
-$("#nome_empresa").click(() => {
-    var idPj = $("a#nome_empresa").attr("idPj");
+$(".nome_empresa").click((e) => {
+    var id = $(e.target).attr("id");
 
-    getById(idPj);
+    //alert(id);
+    getById(id);
 });
 
 function formatCNPJ(cnpj) {
