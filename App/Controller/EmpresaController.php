@@ -20,7 +20,7 @@ class EmpresaController extends Controller {
     public static function getById() 
     {
         $model = new PessoaJuridicaModel();
-        parent::setResponseAsJSON($model->getByIdJoinPessoa((int) $_GET['id']));
+        parent::setResponseAsJSON($model->getByIdJoinPessoaEnderecoCidade((int) $_GET['id']));
     }
 
     public static function buscar(){
