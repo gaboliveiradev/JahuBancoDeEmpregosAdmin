@@ -21,4 +21,12 @@ class VagaController extends Controller {
 
        parent::render("Vaga/ListaVagaEmprego", $model);
     }
+
+    public static function getById()
+    {
+        parent::isAuthenticated();
+
+        $model = new VagaModel();
+        parent::setResponseAsJSON($model->getVagaByIdJoinPessoaPessoaJuridica( (int) $_GET['id'] ));
+    }
 }

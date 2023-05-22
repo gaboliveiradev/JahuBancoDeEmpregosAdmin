@@ -33,4 +33,10 @@ class VagaModel extends Model
 
         return $dao->salarioPorSetor();
     }
+
+    public function getVagaByIdJoinPessoaPessoaJuridica(int $id)
+    {
+        $dao = new VagaDAO();
+        return $dao->getVagaByIdJoinPessoaPessoaJuridica( (int) $id );
+    }
 }

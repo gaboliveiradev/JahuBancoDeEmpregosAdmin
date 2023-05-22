@@ -90,7 +90,10 @@ switch ($parse_uri) {
     case "/get/qualificacao":
         QualificacaoController::getById();
     break;
-
+    
+    case "/get/vaga":
+        VagaController::getById();
+    break;
 
     default:
         header("Location: /login");
