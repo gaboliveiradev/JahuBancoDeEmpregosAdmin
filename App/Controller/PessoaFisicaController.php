@@ -50,7 +50,7 @@ class PessoaFisicaController extends Controller {
         parent::isAuthenticated();
         
         $model = new PessoaFisicaModel();
-        parent::setResponseAsJSON($model->getByIdPessoaFisicaJoinPessoaQualificacaoEnderecoCidade( (int) $_GET['id']));
+        parent::setResponseAsJSON($model->getByIdPessoaFisicaJoinPessoaEnderecoCidade( (int) $_GET['id']));
     }
 
 }

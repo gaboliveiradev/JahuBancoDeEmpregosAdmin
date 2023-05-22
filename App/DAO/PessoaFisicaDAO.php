@@ -108,13 +108,11 @@ class PessoaFisicaDAO extends PessoaDAO
         return $stmt->fetchAll(PDO::FETCH_CLASS);
     }
 
-    public function getByIdPessoaFisicaJoinPessoaQualificacaoEnderecoCidade(int $id) 
+    public function getByIdPessoaFisicaJoinPessoaEnderecoCidade(int $id) 
     {
-        $sql = "SELECT pf.nome as nome_pf, pf.cpf, pf.data_nascimento, pf.sexo, p.email, q.instituicao, q.curso, q.conteudo_curso, q.data_inicio, q.data_conclusao, e.logradouro, e.bairro, e.cep, 
-        e.numero, c.nome as nome_cidade, c.uf, c.codigo_ibge, c.ddd
+        $sql = "SELECT pf.nome as nome_pf, pf.cpf, DATE_FORMAT(pf.data_nascimento, '%d/%m/%Y') as data_formatada, pf.sexo, p.email, e.logradouro, e.bairro, e.cep, e.numero, c.nome as nome_cidade, c.uf, c.codigo_ibge, c.ddd
         FROM pessoa_fisica pf
         JOIN pessoa p ON (p.id_pessoa = pf.id_pessoa)
-        JOIN qualificacao q ON (q.id_pessoa_fisica = pf.id_pessoa_fisica)
         JOIN endereco e ON (e.id_pessoa = p.id_pessoa)
         JOIN cidade c ON (c.id_cidade = e.id_cidade) WHERE pf.id_pessoa_fisica = ?;";
 
