@@ -47,6 +47,8 @@ class PessoaFisicaController extends Controller {
 
     public static function getById() 
     {
+        parent::isAuthenticated();
+        
         $model = new PessoaFisicaModel();
         parent::setResponseAsJSON($model->getByIdPessoaFisicaJoinPessoaQualificacaoEnderecoCidade( (int) $_GET['id']));
     }

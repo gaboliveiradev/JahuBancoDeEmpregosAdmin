@@ -19,6 +19,8 @@ class PessoaJuridicaController extends Controller {
 
     public static function getById() 
     {
+        parent::isAuthenticated();
+        
         $model = new PessoaJuridicaModel();
         parent::setResponseAsJSON($model->getByIdJoinPessoaJuridicaEnderecoCidade((int) $_GET['id']));
     }
