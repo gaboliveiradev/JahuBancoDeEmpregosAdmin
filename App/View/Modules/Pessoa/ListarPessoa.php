@@ -9,6 +9,10 @@
     <title>Listas de Pessoas - Painel Admin</title>
 
     <style>
+        .hr_branco {
+            background-color: #fff;
+        }
+        
         .click {
             cursor: pointer;
         }
@@ -76,16 +80,8 @@
                 <span><b>Gênero: </b></span>
                 <span id="genero"></span> <br>
             </div>
-            <hr class="hr_branco">
-            <div>
-                <h6>Formação Academica <i class="bi bi-book-fill"></i></h6>
-                <hr>
-                <span><b>Nome Fantasia: </b></span>
-                <span id="nomeFantasia"></span> <br>
-                <span><b>Razão Social: </b></span>
-                <span id="razaoSocial"></span> <br>
-                <span><b>CNPJ: </b></span>
-                <span id="cnpj"></span> <br>
+            <div id="div_containter_formacao_academica">
+                
             </div>
             <hr class="hr_branco">
             <div>

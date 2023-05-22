@@ -6,6 +6,7 @@ use App\Controller\{
     PessoaJuridicaController,
     LoginController,
     PessoaFisicaController,
+    QualificacaoController,
     VagaController
 };
 
@@ -82,8 +83,12 @@ switch ($parse_uri) {
         PessoaJuridicaController::getById();
     break;
 
-    case "/get/curriculo":
+    case "/get/pf":
         PessoaFisicaController::getById();
+    break;
+
+    case "/get/qualificacao":
+        QualificacaoController::getById();
     break;
 
 

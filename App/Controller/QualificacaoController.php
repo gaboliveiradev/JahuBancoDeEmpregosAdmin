@@ -1,24 +1,15 @@
 <?php
 namespace App\Controller;
 
+use App\Model\QualificacaoModel;
+
 class QualificacaoController extends Controller {
-	public static function insert() 
+
+	public static function getById() 
 	{
+		parent::isAuthenticated();
 
-	}
-
-	public static function select() 
-	{
-
-	}
-
-	public static function update() 
-	{
-
-	}
-
-	public static function delete() 
-	{
-
+		$model = new QualificacaoModel();
+		parent::setResponseAsJSONInArray($model->getQualificacaoById( (int) $_GET['id'] ));
 	}
 }

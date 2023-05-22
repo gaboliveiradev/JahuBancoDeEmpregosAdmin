@@ -20,7 +20,7 @@ function formatCEP(cep) {
     cep = cep.replace(/^(\d{5})(\d)/, '$1-$2');
   
     return cep;
-  }
+}
 
 function getById(id) {
     $.ajax({
