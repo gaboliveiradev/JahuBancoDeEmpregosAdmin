@@ -23,7 +23,7 @@ if(str_contains($_SERVER['HTTP_HOST'], 'localhost'))
     $_ENV['db']['host'] = 'localhost';
     $_ENV['db']['user'] = 'empregajaucom_db'; // Esse usuário tem apenas os privilégios de SELECT e UPDATE
     $_ENV['db']['pass'] = 'U&+aQMn_6jn^';
-    $_ENV['db']['database'] = 'empregajaucom_db';
+    $_ENV['db']['dbname'] = 'empregajaucom_db';
 }
 
 /*$_ENV['db']['host'] = 'localhost:3306';

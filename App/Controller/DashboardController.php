@@ -26,6 +26,6 @@ class DashboardController extends Controller {
         $salario_por_setor = $model->salarioPorSetor();
 
 
-        include 'View/Modules/Dashboard/MenuInicial.php';
+        include 'App/View/modules/Dashboard/MenuInicial.php';
     }
 }
