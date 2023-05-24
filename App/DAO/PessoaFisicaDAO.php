@@ -62,7 +62,7 @@ class PessoaFisicaDAO extends PessoaDAO
         $sql = "SELECT 
                     COUNT(id_pessoa_fisica) AS pessoas_por_sexo
                 FROM pessoa_fisica
-                GROUP BY sexo";
+                GROUP BY genero";
 
         $stmt = $this->conexao->prepare($sql);
         $stmt->execute();
@@ -98,9 +98,9 @@ class PessoaFisicaDAO extends PessoaDAO
 
     public function idadePorSexo()
     {
-        $sql = "SELECT pf.sexo, AVG(TIMESTAMPDIFF(YEAR, pf.data_nascimento, NOW())) AS idade
+        $sql = "SELECT pf.genero, AVG(TIMESTAMPDIFF(YEAR, pf.data_nascimento, NOW())) AS idade
         FROM pessoa_fisica pf
-        GROUP BY pf.sexo";
+        GROUP BY pf.genero";
 
         $stmt = $this->conexao->prepare($sql);
         $stmt->execute();
@@ -110,7 +110,7 @@ class PessoaFisicaDAO extends PessoaDAO
 
     public function getByIdPessoaFisicaJoinPessoaEnderecoCidade(int $id) 
     {
-        $sql = "SELECT pf.nome as nome_pf, pf.cpf, DATE_FORMAT(pf.data_nascimento, '%d/%m/%Y') as data_formatada, pf.sexo, p.email, e.logradouro, e.bairro, e.cep, e.numero, c.nome as nome_cidade, c.uf, c.codigo_ibge, c.ddd
+        $sql = "SELECT pf.nome as nome_pf, pf.cpf, DATE_FORMAT(pf.data_nascimento, '%d/%m/%Y') as data_formatada, pf.genero, p.email, e.logradouro, e.bairro, e.cep, e.numero, c.nome as nome_cidade, c.uf, c.codigo_ibge, c.ddd
         FROM pessoa_fisica pf
         JOIN pessoa p ON (p.id_pessoa = pf.id_pessoa)
         JOIN endereco e ON (e.id_pessoa = p.id_pessoa)
