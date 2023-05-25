@@ -68,12 +68,13 @@ class VagaDAO extends DAO {
 
     public function getVagaByIdJoinPessoaPessoaJuridica(int $id) 
     {
-        $sql = "SELECT v.titulo, v.descricao, v.salario, v.setor, DATE_FORMAT(v.data_abertura, '%d/%m/%Y') AS data_abertura, DATE_FORMAT(v.data_fechamento, '%d/%m/%Y') AS data_fechamento, p.email, pj.nome_fantasia, pj.cnpj, pj.razao_social, e.logradouro, e.numero, e.cep, e.bairro, c.nome as nome_cidade, c.uf, c.codigo_ibge, c.ddd
+        $sql = "SELECT v.titulo, v.descricao, v.salario, v.setor, DATE_FORMAT(v.data_abertura, '%d/%m/%Y') AS data_abertura, DATE_FORMAT(v.data_fechamento, '%d/%m/%Y') AS data_fechamento, v.quantidade_ofertada, v.limite_candidatos, 
+        v.situacao, v.vaga_deficiente, p.email, pj.nome_fantasia, pj.cnpj, pj.razao_social, e.logradouro, e.numero, e.cep, e.bairro, c.nome as nome_cidade, c.uf, c.codigo_ibge, c.ddd
         FROM vaga v
-        JOIN pessoa p ON (p.id_pessoa = v.id_pessoa)
-        JOIN pessoa_juridica pj ON (pj.id_pessoa = p.id_pessoa) 
-        JOIN endereco e ON (e.id_pessoa = p.id_pessoa) 
-        JOIN cidade c ON (c.id_cidade = e.id_cidade) WHERE v.id_vaga = ?;";
+        LEFT JOIN pessoa p ON (p.id_pessoa = v.id_pessoa)
+        LEFT JOIN pessoa_juridica pj ON (pj.id_pessoa = p.id_pessoa) 
+        LEFT JOIN endereco e ON (e.id_pessoa = p.id_pessoa) 
+        LEFT JOIN cidade c ON (c.id_cidade = e.id_cidade) WHERE v.id_vaga = ? GROUP BY v.id_vaga;";
 
         $stmt = $this->conexao->prepare($sql);
         $stmt->bindValue(1, $id);

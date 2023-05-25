@@ -40,6 +40,20 @@ function formatCEP(cep) {
     return cep;
 }
 
+function formatarSituacao(situacao) {
+    if(situacao == "A") {
+        return "Aberto";
+    } else if (situacao == "S") {
+        return "Suspensa";
+    } else if (situacao == "F") {
+        return "Finalizada";
+    } else if (situacao == "C") {
+        return "Cancelada";
+    } else {
+        return "Inválida / Erro";
+    }
+}
+
 function getVagaById(id) {
     $.ajax({
         type: "GET",
@@ -52,6 +66,10 @@ function getVagaById(id) {
             $("#desc").text(result[0].descricao);
             $("#salario").text(formatarValorReal(result[0].salario));
             $("#setor").text(result[0].setor);
+            $("#qntVagas").text(result[0].quantidade_ofertada);
+            $("#lmtCandidatos").text(result[0].limite_candidatos);
+            $("#situacao").text(formatarSituacao(result[0].situacao));
+            $("#deficiente").text((result[0].vaga_deficiente == "N") ? "Não" : "Sim");
             $("#data_abertura").text(result[0].data_abertura);
             $("#data_fechamento").text((result[0].data_fechamento == null) ? "Em Aberto" : result[0].data_fechamento);
 

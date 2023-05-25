@@ -114,7 +114,7 @@ class PessoaFisicaDAO extends PessoaDAO
         FROM pessoa_fisica pf
         JOIN pessoa p ON (p.id_pessoa = pf.id_pessoa)
         JOIN endereco e ON (e.id_pessoa = p.id_pessoa)
-        JOIN cidade c ON (c.id_cidade = e.id_cidade) WHERE pf.id_pessoa_fisica = ?;";
+        JOIN cidade c ON (c.id_cidade = e.id_cidade) WHERE pf.id_pessoa_fisica = ? GROUP BY pf.id_pessoa_fisica;";
 
         $stmt = $this->conexao->prepare($sql);
         $stmt->bindValue(1, $id);

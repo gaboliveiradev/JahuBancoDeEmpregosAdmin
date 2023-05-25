@@ -77,6 +77,14 @@
                 <span id="salario"></span> <br>
                 <span><b>Setor: </b></span>
                 <span id="setor"></span> <br>
+                <span><b>Quantidade de Vagas: </b></span>
+                <span id="qntVagas"></span> <br>
+                <span><b>Limite de Candidatos: </b></span>
+                <span id="lmtCandidatos"></span> <br>
+                <span><b>Situação: </b></span>
+                <span id="situacao"></span> <br>
+                <span><b>Vaga Deficiente: </b></span>
+                <span id="deficiente"></span> <br>
                 <span><b>Data Abertura: </b></span>
                 <span id="data_abertura"></span> <br>
                 <span><b>Data Fechamento: </b></span>
