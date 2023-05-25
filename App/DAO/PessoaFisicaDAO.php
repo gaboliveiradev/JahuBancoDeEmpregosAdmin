@@ -112,9 +112,9 @@ class PessoaFisicaDAO extends PessoaDAO
     {
         $sql = "SELECT pf.nome as nome_pf, pf.cpf, DATE_FORMAT(pf.data_nascimento, '%d/%m/%Y') as data_formatada, pf.genero, p.email, e.logradouro, e.bairro, e.cep, e.numero, c.nome as nome_cidade, c.uf, c.codigo_ibge, c.ddd
         FROM pessoa_fisica pf
-        JOIN pessoa p ON (p.id_pessoa = pf.id_pessoa)
-        JOIN endereco e ON (e.id_pessoa = p.id_pessoa)
-        JOIN cidade c ON (c.id_cidade = e.id_cidade) WHERE pf.id_pessoa_fisica = ? GROUP BY pf.id_pessoa_fisica;";
+        LEFT JOIN pessoa p ON (p.id_pessoa = pf.id_pessoa)
+        LEFT JOIN endereco e ON (e.id_pessoa = p.id_pessoa)
+        LEFT JOIN cidade c ON (c.id_cidade = e.id_cidade) WHERE pf.id_pessoa_fisica = ? GROUP BY pf.id_pessoa_fisica;";
 
         $stmt = $this->conexao->prepare($sql);
         $stmt->bindValue(1, $id);
