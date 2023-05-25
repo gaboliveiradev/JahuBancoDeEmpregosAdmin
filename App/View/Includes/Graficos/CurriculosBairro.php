@@ -16,7 +16,7 @@
         for (var i = 0; i < jsonData.length; i++) {
           var row = [jsonData[i].bairro, jsonData[i].quantidade];
           dataArray.push(row);
-          console.log(jsonData[i].bairro)
+          //console.log(jsonData[i].bairro)
         }
 
         var options = {
