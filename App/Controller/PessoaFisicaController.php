@@ -23,6 +23,14 @@ class PessoaFisicaController extends Controller {
        parent::render("Pessoa/ListarPessoa", $model);
     }
 
+    public static function pessoasBySexo(){
+        parent::isAuthenticated();
+
+        $model = new PessoaFisicaModel();
+        $query = $model->pessoasPorSexo();
+        parent::setResponseAsJSON($query);
+    }
+
     public static function curriculosByBairro(){
         parent::isAuthenticated();
 

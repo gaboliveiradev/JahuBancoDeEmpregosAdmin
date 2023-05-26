@@ -1,28 +1,36 @@
-
 <script type="text/javascript">
-  google.charts.load('current', {'packages':['bar']});
+ google.charts.load('current', {'packages':['corechart']});
+
   google.charts.setOnLoadCallback(drawChart);
 
   function drawChart() {
-    var data = google.visualization.arrayToDataTable([
-      ['Nome dos Bairros', 'Media',],
-      ['Jardim Dona Emilia', 55.2],
-      ['Centro', 22.5],
-      ['Jardim Carolina', 58.2],
-      ['Jardim América', 33.2],
-      ['Jardim Parati', 21.4]
-    ]);
+    $.ajax({
+      url: "/idade/by-bairro",
+      dataType: "JSON",
+      success: function(jsonData) {
+        var dataArray = [
+          ['Bairro', 'Idade'],
+        ];
 
-    var options = {
-      legend: { position: 'none' },
-      isStacked: 'percent',
-      chart: {
-        title: '',
-        subtitle: '',
+        for (var i = 0; i < jsonData.length; i++) {
+          var row = [jsonData[i].bairro, parseInt(jsonData[i].idade)];
+          dataArray.push(row);         
+        }
+
+        var options = {
+          title: "",       
+          legend: {
+            position: "none"
+          },
+        };
+
+        var data = google.visualization.arrayToDataTable(dataArray);
+
+        var chart = new google.visualization.BarChart(document.getElementById('media_idade_bairro_chart_div'));
+
+        chart.draw(data, options);
+        
       }
-    };
-
-    var chart = new google.charts.Bar(document.getElementById('media_idade_bairro_chart_div'));
-    chart.draw(data, google.charts.Bar.convertOptions(options));
+    });
   }
 </script>

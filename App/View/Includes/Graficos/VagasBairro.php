@@ -1,28 +1,35 @@
-
 <script type="text/javascript">
-  google.charts.load('current', {'packages':['bar']});
+ google.charts.load('current', {'packages':['corechart']});
+
   google.charts.setOnLoadCallback(drawChart);
 
   function drawChart() {
-    var data = google.visualization.arrayToDataTable([
-      ['Nome dos Bairros', 'Vagas Ofertadas',],
-      ['Distrito Industrial', 18],
-      ['Centro', 15],
-      ['Jardim Carolina', 9],
-      ['Jardim América', 2],
-      ['Jardim Parati', 1]
-    ]);
+    $.ajax({
+      url: "/vaga/by-bairro",
+      dataType: "JSON",
+      success: function(jsonData) {
+        var dataArray = [
+          ['Bairro', 'Quantidade de Vagas'],
+        ];
 
-    var options = {
-      legend: { position: 'none' },
-      isStacked: 'percent',
-      chart: {
-        title: '',
-        subtitle: '',
+
+
+        for (var i = 0; i < jsonData.length; i++) {
+          var row = [jsonData[i].bairro, jsonData[i].vagas_por_bairro];
+          dataArray.push(row);         
+        }
+        var options = {
+          title: "",       
+          
+        };
+
+        var data = google.visualization.arrayToDataTable(dataArray);
+
+        var chart = new google.visualization.PieChart(document.getElementById('vaga_bairro_chart_div'));
+
+        chart.draw(data, options);
+        
       }
-    };
-
-    var chart = new google.charts.Bar(document.getElementById('vaga_bairro_chart_div'));
-    chart.draw(data, google.charts.Bar.convertOptions(options));
+    });
   }
 </script>

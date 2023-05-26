@@ -63,37 +63,55 @@ switch ($parse_uri) {
 
     case "/vaga-de-emprego":
         //VagaController::index();
-    break;
+        break;
 
-    // Query's
+        // Query's
 
     case '/curriculo/by-bairro':
         PessoaFisicaController::curriculosByBairro();
-    break;
+        break;
 
     case '/idade/by-sexo':
         PessoaFisicaController::idadeBySexo();
-    break;
+        break;
+    case '/pessoa/by-sexo':
+        PessoaFisicaController::pessoasBySexo();
+        break;
+
+    case '/salario/by-setor':
+        VagaController::salarioPorSetor();
+        break;
+    case '/vaga/by-setor':
+        VagaController::vagasPorSetor();
+        break;
+
+    case '/vaga/by-bairro':
+        VagaController::vagasPorBairro();
+        break;
+
+
+    case '/empresa/by-bairro':
+        PessoaJuridicaController::empresasByBairro();
 
     case '/idade/by-bairro':
         PessoaFisicaController::idadeByBairro();
-    break;
+        break;
 
     case "/get/empresa":
         PessoaJuridicaController::getById();
-    break;
+        break;
 
     case "/get/pf":
         PessoaFisicaController::getById();
-    break;
+        break;
 
     case "/get/qualificacao":
         QualificacaoController::getById();
-    break;
-    
+        break;
+
     case "/get/vaga":
         VagaController::getById();
-    break;
+        break;
 
     default:
         header("Location: /login");

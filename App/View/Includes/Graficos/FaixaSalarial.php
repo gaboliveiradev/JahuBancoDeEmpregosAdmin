@@ -1,24 +1,35 @@
+<script type="text/javascript">
+ google.charts.load('current', {'packages':['corechart']});
 
-    <script type="text/javascript">
-      google.charts.load('current', {'packages':['bar']});
-      google.charts.setOnLoadCallback(drawChart);
+  google.charts.setOnLoadCallback(drawChart);
 
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Setores', 'Administração', 'TI', 'Marketing', 'RH', 'RP'],
-          ['Salários', 4300, 8900, 5100, 3400, 6790],
-        ]);
+  function drawChart() {
+    $.ajax({
+      url: "/salario/by-setor",
+      dataType: "JSON",
+      success: function(jsonData) {
+        var dataArray = [
+          ['Setor', 'Salário'],
+        ];
 
+
+
+        for (var i = 0; i < jsonData.length; i++) {
+          var row = [jsonData[i].setor, jsonData[i].media_salario_setor];
+          dataArray.push(row);         
+        }
         var options = {
-          chart: {
-            title: '',
-            subtitle: '',
-          },
-          bars: 'vertical' 
+          title: "",       
+          
         };
 
-        var chart = new google.charts.Bar(document.getElementById('faixa_salarial_barchart_material'));
+        var data = google.visualization.arrayToDataTable(dataArray);
 
-        chart.draw(data, google.charts.Bar.convertOptions(options));
+        var chart = new google.visualization.PieChart(document.getElementById('faixa_salarial_barchart_material'));
+
+        chart.draw(data, options);
+        
       }
-    </script>
+    });
+  }
+</script>

@@ -29,4 +29,33 @@ class VagaController extends Controller {
         $model = new VagaModel();
         parent::setResponseAsJSON($model->getVagaByIdJoinPessoaPessoaJuridica( (int) $_GET['id'] ));
     }
+
+    public static function vagasPorSetor()
+    {
+        parent::isAuthenticated();
+
+        $model = new VagaModel();
+        $query = $model->vagasPorSetor();
+
+        parent::setResponseAsJSON($query);
+    }
+    public static function salarioPorSetor()
+    {
+        parent::isAuthenticated();
+
+        $model = new VagaModel();
+        $query = $model->salarioPorSetor();
+
+        parent::setResponseAsJSON($query);
+    }
+
+    public static function vagasPorBairro()
+    {
+        parent::isAuthenticated();
+
+        $model = new VagaModel();
+        $query = $model->vagasPorBairro();
+
+        parent::setResponseAsJSON($query);
+    }
 }

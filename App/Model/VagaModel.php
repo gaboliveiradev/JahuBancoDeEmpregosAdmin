@@ -27,6 +27,11 @@ class VagaModel extends Model
 
         return $dao->vagasPorSetor();
     }
+    public function vagasPorBairro(){
+        $dao = new VagaDAO();
+
+        return $dao->vagasPorBairro();
+    }
 
     public function salarioPorSetor(){
         $dao = new VagaDAO();

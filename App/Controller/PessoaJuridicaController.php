@@ -35,4 +35,10 @@ class PessoaJuridicaController extends Controller {
        parent::render("Empresa/ListaEmpresas", $model);
     }
 
+    public static function empresasByBairro(){
+        parent::isAuthenticated();
+        $model = new PessoaJuridicaModel();
+        $query = $model->empresasPorBairro();
+        parent::setResponseAsJSON($query);
+    }
 }

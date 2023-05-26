@@ -55,6 +55,19 @@ class VagaDAO extends DAO {
         return $stmt->fetchAll(PDO::FETCH_CLASS);
     }
 
+    public function vagasPorBairro(){
+        $sql = "SELECT e.bairro, COUNT(v.id_vaga) AS vagas_por_bairro
+        FROM pessoa_juridica pj
+        JOIN vaga v ON (v.id_pessoa = pj.id_pessoa)
+        JOIN endereco e ON (e.id_pessoa = pj.id_pessoa)
+        GROUP BY e.bairro";
+
+        $stmt = $this->conexao->prepare($sql);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_CLASS);
+    }
+
     public function salarioPorSetor(){
         $sql = "SELECT v.setor, AVG(v.salario) AS media_salario_setor
         FROM vaga v

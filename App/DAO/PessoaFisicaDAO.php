@@ -59,7 +59,7 @@ class PessoaFisicaDAO extends PessoaDAO
 
     public function pessoasPorSexo()
     {
-        $sql = "SELECT 
+        $sql = "SELECT genero as genero,
                     COUNT(id_pessoa_fisica) AS pessoas_por_sexo
                 FROM pessoa_fisica
                 GROUP BY genero";
@@ -85,7 +85,7 @@ class PessoaFisicaDAO extends PessoaDAO
 
     public function idadePorBairro()
     {
-        $sql = "SELECT e.bairro, AVG(TIMESTAMPDIFF(YEAR, pf.data_nascimento, NOW())) AS idade
+        $sql = "SELECT e.bairro, ROUND(AVG(TIMESTAMPDIFF(YEAR, pf.data_nascimento, NOW())), 0) AS idade
         FROM pessoa_fisica pf
         JOIN endereco e ON (e.id_pessoa = pf.id_pessoa)
         GROUP BY e.bairro";
@@ -98,7 +98,7 @@ class PessoaFisicaDAO extends PessoaDAO
 
     public function idadePorSexo()
     {
-        $sql = "SELECT pf.genero, AVG(TIMESTAMPDIFF(YEAR, pf.data_nascimento, NOW())) AS idade
+        $sql = "SELECT pf.genero as genero, ROUND(AVG(TIMESTAMPDIFF(YEAR, pf.data_nascimento, NOW())), 0) AS idade
         FROM pessoa_fisica pf
         GROUP BY pf.genero";
 

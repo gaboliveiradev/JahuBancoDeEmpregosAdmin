@@ -7,13 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
-  <?php include  VIEWS . "/../Includes/Bootstrap/css_config.php" ?>
-  <?php include  VIEWS . "/../Includes/Graficos/PessoaSexo.php" ?>
-  <?php include  VIEWS . "/../Includes/Graficos/CurriculosBairro.php" ?>
-  <?php include  VIEWS . "/../Includes/Graficos/FaixaSalarial.php" ?>
-  <?php include  VIEWS . "/../Includes/Graficos/MediaIdadeBairro.php" ?>
-  <?php include  VIEWS . "/../Includes/Graficos/MediaIdadeSexo.php" ?>
-  <?php include  VIEWS . "/../Includes/Graficos/VagasBairro.php" ?>
+  
   <title>Dashboard - Logado como <?= $_SESSION['admin_logged']->nome ?></title>
 
   <style>
@@ -42,6 +36,19 @@
               </div>
               <div class="card-body">
                 <div id="faixa_salarial_barchart_material"></div>
+              </div>
+              <div class="card-footer text-muted">
+                Ultima atualização, há 1 hora.
+              </div>
+            </div>
+          </div>
+
+          <div class="card text-center">
+              <div class="card-header">
+                <b>Empresa:</b> Quantidade de Empresas por Bairro
+              </div>
+              <div class="card-body">
+                <div id="empresas_bairro_chart_div"></div>
               </div>
               <div class="card-footer text-muted">
                 Ultima atualização, há 1 hora.
@@ -118,6 +125,15 @@
   </center>
 
   <?php include  VIEWS . '/../Includes/Bootstrap/js_config.php' ?>
+
+  <?php include  VIEWS . "/../Includes/Bootstrap/css_config.php" ?>
+  <?php include  VIEWS . "/../Includes/Graficos/PessoaSexo.php" ?>
+  <?php include  VIEWS . "/../Includes/Graficos/CurriculosBairro.php" ?>
+  <?php include  VIEWS . "/../Includes/Graficos/EmpresasBairro.php" ?>
+  <?php include  VIEWS . "/../Includes/Graficos/FaixaSalarial.php" ?>
+  <?php include  VIEWS . "/../Includes/Graficos/MediaIdadeBairro.php" ?>
+  <?php include  VIEWS . "/../Includes/Graficos/MediaIdadeSexo.php" ?>
+  <?php include  VIEWS . "/../Includes/Graficos/VagasBairro.php" ?>
 </body>
 
 </html>

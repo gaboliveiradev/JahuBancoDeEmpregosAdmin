@@ -1,25 +1,35 @@
-
 <script type="text/javascript">
-  google.charts.load('current', {'packages':['bar']});
+ google.charts.load('current', {'packages':['corechart']});
+
   google.charts.setOnLoadCallback(drawChart);
 
   function drawChart() {
-    var data = google.visualization.arrayToDataTable([
-      ['Sexo', 'Media',],
-      ['Masculino', 55.2],
-      ['Fermino', 22.5],
-    ]);
+    $.ajax({
+      url: "/idade/by-sexo",
+      dataType: "JSON",
+      success: function(jsonData) {
+        var dataArray = [
+          ['Genero', 'Idade'],
+        ];
 
-    var options = {
-      legend: { position: 'none' },
-      isStacked: 'percent',
-      chart: {
-        title: '',
-        subtitle: '',
+        for (var i = 0; i < jsonData.length; i++) {
+          var row = [jsonData[i].genero, parseInt(jsonData[i].idade)];
+          dataArray.push(row);         
+        }
+
+
+        var options = {
+          title: "",       
+         
+        };
+
+        var data = google.visualization.arrayToDataTable(dataArray);
+
+        var chart = new google.visualization.PieChart(document.getElementById('media_idade_sexo_chart_div'));
+
+        chart.draw(data, options);
+        
       }
-    };
-
-    var chart = new google.charts.Bar(document.getElementById('media_idade_sexo_chart_div'));
-    chart.draw(data, google.charts.Bar.convertOptions(options));
+    });
   }
 </script>
