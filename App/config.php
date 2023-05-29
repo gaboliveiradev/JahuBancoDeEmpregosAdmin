@@ -1,6 +1,6 @@
 <?php
     define('BASEDIR', dirname(__FILE__, 2));
-    define('VIEWS', BASEDIR . '/App/View/modules/');
+    define('VIEWS', BASEDIR . '/App/View/Modules/');
 
 /**
  * Configurações do Ambiente de Desenvolvimento
@@ -9,7 +9,7 @@ if(str_contains($_SERVER['HTTP_HOST'], 'localhost'))
 {
     $_ENV['db']['host'] = 'localhost:3306';
     $_ENV['db']['user'] = 'root';
-    $_ENV['db']['pass'] = 'Eduardo@mysql';
+    $_ENV['db']['pass'] = 'cajuru@2022';
     $_ENV['db']['dbname'] = 'metodaco_banco_empregos';
 
     error_reporting(~ E_ALL);

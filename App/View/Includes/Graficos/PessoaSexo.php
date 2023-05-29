@@ -1,4 +1,5 @@
-<script type="text/javascript">
+<script type="module">
+ 
  google.charts.load('current', {'packages':['corechart']});
 
   google.charts.setOnLoadCallback(drawChart);
@@ -8,18 +9,21 @@
       url: "/pessoa/by-sexo",
       dataType: "JSON",
       success: function(jsonData) {
+
         var dataArray = [
-          ['Setor', 'Salário'],
+          ['Genero', 'Total'],
         ];
 
-
-
         for (var i = 0; i < jsonData.length; i++) {
-          var row = [jsonData[i].genero, jsonData[i].pessoas_por_sexo];
-          dataArray.push(row);         
+         
+          dataArray.push([jsonData[i].genero, jsonData[i].pessoas_por_sexo]);         
         }
+
+        console.log(dataArray);
+
+
         var options = {
-          title: "",       
+          title: "Pessoas Por Gênero",       
           
         };
 

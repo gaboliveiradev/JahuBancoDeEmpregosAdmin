@@ -7,6 +7,10 @@
       url: "/curriculo/by-bairro",
       dataType: "JSON",
       success: function(jsonData) {
+
+        console.log(jsonData)
+
+
         var dataArray = [
           ['Bairro', 'Quantidade'],
         ];
@@ -14,7 +18,7 @@
         for (var i = 0; i < jsonData.length; i++) {
           var row = [jsonData[i].bairro, jsonData[i].quantidade];
           dataArray.push(row);
-          //console.log(jsonData[i].bairro)
+          
         }
 
         var options = {

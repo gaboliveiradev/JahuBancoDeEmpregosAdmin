@@ -1,35 +1,39 @@
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript">
- google.charts.load('current', {'packages':['corechart']});
+  google.charts.load("current", {packages:["corechart"]});
+  google.charts.setOnLoadCallback(loadSalarioPorSetor);
 
-  google.charts.setOnLoadCallback(drawChart);
+  function loadSalarioPorSetor()
+  {
+    var data = google.visualization.arrayToDataTable([
+          ['Gênero', 'Quantidade'],
+          ['Ind', 1517.53],
+          ['Ser', 13438.5]          
+        ]);
 
-  function drawChart() {
     $.ajax({
-      url: "/salario/by-setor",
-      dataType: "JSON",
-      success: function(jsonData) {
-        var dataArray = [
-          ['Setor', 'Salário'],
-        ];
+        url: "/salario/by-setor",
+        dataType: "JSON",
+        success: function(jsonData) 
+        {
+          var dataArray = [
+            ['Setor', 'Salário'],
+          ];
 
-
-
-        for (var i = 0; i < jsonData.length; i++) {
-          var row = [jsonData[i].setor, jsonData[i].media_salario_setor];
-          dataArray.push(row);         
-        }
-        var options = {
-          title: "",       
+          for (var i = 0; i < jsonData.length; i++)
+            dataArray.push([jsonData[i].setor, parseFloat(jsonData[i].media_salario_setor)]);
           
-        };
+          var options = {
+            title: 'Salário por Setor',
+            is3D: true,
+          };
 
-        var data = google.visualization.arrayToDataTable(dataArray);
+          console.log(dataArray);
 
-        var chart = new google.visualization.PieChart(document.getElementById('faixa_salarial_barchart_material'));
-
-        chart.draw(data, options);
-        
-      }
+          var data = google.visualization.arrayToDataTable(dataArray);
+          var chart = new google.visualization.ColumnChart(document.getElementById('faixa_salarial_barchart_material'));
+              chart.draw(data, options);
+        }
     });
   }
 </script>

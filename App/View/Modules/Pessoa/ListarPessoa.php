@@ -110,7 +110,7 @@
 
 
     <?php include  VIEWS . "/../Includes/Bootstrap/js_config.php" ?>
-    <script src="./../../../View/js/jquery.curriculo.js"></script>
+    <script src="/App/View/js/jquery.curriculo.js"></script>
 </body>
 
 </html>

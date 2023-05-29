@@ -130,7 +130,7 @@
 
 
     <?php include  VIEWS . "/../Includes/Bootstrap/js_config.php" ?>
-    <script src="./../../../View/js/jquery.vaga.js"></script>
+    <script src="/App/View/js/jquery.vaga.js"></script>
 </body>
 
 </html>

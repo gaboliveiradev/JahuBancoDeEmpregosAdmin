@@ -9,6 +9,7 @@ use App\Model\VagaModel;
 class DashboardController extends Controller {
 
     public static function index() {
+        
         parent::isAuthenticated();
 
         $model = new PessoaFisicaModel();
@@ -25,7 +26,6 @@ class DashboardController extends Controller {
         $vagas_por_setor = $model->vagasPorSetor();
         $salario_por_setor = $model->salarioPorSetor();
 
-
-        include './../App/View/modules/Dashboard/MenuInicial.php';
+        parent::render("Dashboard/MenuInicial");
     }
 }

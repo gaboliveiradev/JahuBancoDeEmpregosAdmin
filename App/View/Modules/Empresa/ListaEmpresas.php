@@ -105,7 +105,7 @@
     </div>
 
     <?php include  VIEWS . "/../Includes/Bootstrap/js_config.php" ?>
-    <script src="./../../../View/js/jquery.empresa.js"></script>
+    <script src="/App/View/js/jquery.empresa.js"></script>
 </body>
 
 </html>
