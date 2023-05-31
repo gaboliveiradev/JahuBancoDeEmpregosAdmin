@@ -21,9 +21,17 @@ if(str_contains($_SERVER['HTTP_HOST'], 'localhost'))
      * Configurações do Ambiente de PRODUÇÃO
      */
     $_ENV['db']['host'] = 'localhost';
-    $_ENV['db']['user'] = 'empregajaucom_db'; // Esse usuário tem apenas os privilégios de SELECT e UPDATE
-    $_ENV['db']['pass'] = 'U&+aQMn_6jn^';
-    $_ENV['db']['dbname'] = 'empregajaucom_db';
+    $_ENV['db']['user'] = 'ftp7702e_prod'; // Esse usuário tem apenas os privilégios de SELECT e UPDATE
+    $_ENV['db']['pass'] = 'aFYcnftTdgYK';
+    $_ENV['db']['dbname'] = 'ftp7702e_emprega';
+
+    /**
+     * Antigo
+     */
+    //$_ENV['db']['host'] = 'localhost';
+    //$_ENV['db']['user'] = 'empregajaucom_db'; // Esse usuário tem apenas os privilégios de SELECT e UPDATE
+    //$_ENV['db']['pass'] = 'U&+aQMn_6jn^';
+    //$_ENV['db']['dbname'] = 'empregajaucom_db';
 }
 
 /*$_ENV['db']['host'] = 'localhost:3306';
