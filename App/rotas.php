@@ -12,6 +12,8 @@ use App\Controller\{
 
 $parse_uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
+//var_dump($parse_uri);
+
 switch ($parse_uri) {
 
         // Rotas Login
